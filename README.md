@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5d420c39-3bbc-44a5-878b-9eeb397ef6f3)# Desenho de Polígonos em Python
+# Desenho de Polígonos em Python
 
 ## Descrição
 
