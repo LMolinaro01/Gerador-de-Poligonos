@@ -1,10 +1,14 @@
-# Desenho de Polígonos em Python
+![image](https://github.com/user-attachments/assets/5d420c39-3bbc-44a5-878b-9eeb397ef6f3)# Desenho de Polígonos em Python
 
 ## Descrição
 
 Este repositório contém um aplicativo GUI (Interface Gráfica do Usuário) desenvolvido em Python usando Tkinter e Matplotlib. O aplicativo permite aos usuários gerar e visualizar polígonos com um número especificado de lados. Além disso, oferece funcionalidades para navegar entre diferentes páginas de polígonos e salvar as imagens geradas.
 
 ![image](https://github.com/user-attachments/assets/91b2c13d-f3b8-4dbb-abc0-58448f249dd3)
+
+![image](https://github.com/user-attachments/assets/4cdc5045-b08c-472c-97a5-387d02c36524)
+
+![image](https://github.com/user-attachments/assets/6af48a4c-df15-46c6-bd85-559f3a799b69)
 
 
 ## Funcionalidades
