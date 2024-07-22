@@ -4,11 +4,9 @@
 
 Este repositório contém um aplicativo GUI (Interface Gráfica do Usuário) desenvolvido em Python usando Tkinter e Matplotlib. O aplicativo permite aos usuários gerar e visualizar polígonos com um número especificado de lados. Além disso, oferece funcionalidades para navegar entre diferentes páginas de polígonos e salvar as imagens geradas.
 
-![image](https://github.com/user-attachments/assets/91b2c13d-f3b8-4dbb-abc0-58448f249dd3)
-
-![image](https://github.com/user-attachments/assets/4cdc5045-b08c-472c-97a5-387d02c36524)
-
-![image](https://github.com/user-attachments/assets/6af48a4c-df15-46c6-bd85-559f3a799b69)
+![image](https://github.com/user-attachments/assets/657056bf-35ad-4977-abd8-1fb8d806b223)
+![image](https://github.com/user-attachments/assets/84d86c6c-82ea-4e4a-a09a-75c0ff4de418)
+![image](https://github.com/user-attachments/assets/db68047b-5642-4c24-b380-a2eb49b92cd5)
 
 
 ## Funcionalidades
