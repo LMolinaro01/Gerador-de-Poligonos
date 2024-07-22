@@ -1,4 +1,4 @@
-# Desenho de Polígonos em Python
+# Gerador de Polígonos em Python
 
 ## Descrição
 
