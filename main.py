@@ -64,14 +64,14 @@ class Navigation:
 
     def create_widgets(self):
         self.canvas = FigureCanvasTkAgg(self.fig, master=self.root)
-        self.canvas.get_tk_widget().grid(row=1, column=0, columnspan=3, padx=10, pady=10)
+        self.canvas.get_tk_widget().grid(row=1, column=0, columnspan=3, padx=10, pady=10, sticky=tk.N+tk.S+tk.E+tk.W)
 
         # Botões de navegação
         self.btn_prev = ttk.Button(self.root, text='Voltar', command=self.on_prev_clicked)
-        self.btn_prev.grid(row=4, column=0, padx=10, pady=10, sticky=tk.W)
+        self.btn_prev.grid(row=2, column=0, padx=10, pady=10, sticky=tk.W)
 
         self.btn_next = ttk.Button(self.root, text='Avançar', command=self.on_next_clicked)
-        self.btn_next.grid(row=4, column=2, padx=10, pady=10, sticky=tk.E)
+        self.btn_next.grid(row=2, column=2, padx=10, pady=10, sticky=tk.E)
 
     def on_prev_clicked(self):
         self.index = (self.index - self.num_to_show) % self.num_polygons
@@ -107,7 +107,7 @@ class Navigation:
                 return
 
         # Mostrar a barra de progresso
-        self.progress_bar.grid(row=6, column=0, columnspan=2, pady=10)
+        self.progress_bar.grid(row=4, column=0, columnspan=3, pady=10)
         self.progress_bar['maximum'] = num_pages
         self.progress_bar['value'] = 0
 
@@ -122,6 +122,13 @@ class Navigation:
         self.progress_bar['value'] = 0
         # Esconde a barra de progresso após a conclusão
         self.progress_bar.grid_forget()
+
+    def reset(self):
+        # Remove o conteúdo da janela
+        for widget in self.root.winfo_children():
+            widget.grid_remove()
+        # Mostra os widgets da tela inicial
+        show_initial_widgets()
 
 def on_button_click():
     global nav
@@ -149,51 +156,63 @@ def on_button_click():
         nav.x, nav.y = nav.generate_polygon_vertices(nav.num_sides)
         nav.update_plot()
 
-        # Mostrar o botão de download após desenhar os polígonos
-        button_download.grid(column=0, row=5, columnspan=2, pady=10)
+        # Mostrar os botões após desenhar os polígonos
+        button_download.grid(column=0, row=3, columnspan=3, pady=10)
+        button_reset.grid(column=0, row=4, columnspan=3, pady=10)
 
     except ValueError as e:
         messagebox.showerror("Erro", str(e))
 
+def show_initial_widgets():
+    frame.grid(column=0, row=1, sticky=(tk.W, tk.E, tk.N, tk.S))
+    button.grid(column=0, row=3, columnspan=2, pady=10)
+
 root = tk.Tk()
-root.title("Desenho de Polígonos")
+root.title("Gerador de Polígonos")
+
+root.geometry("820x600")
+
+root.columnconfigure(0, weight=1)
+root.rowconfigure(1, weight=1)
 
 frame = ttk.Frame(root, padding="10")
-frame.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+frame.grid(column=0, row=1, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-label_polygons = ttk.Label(frame, text="Quantidade de Polígonos:")
+label_polygons = ttk.Label(frame, text="Quantidade de Polígonos", font=("Consolas bold", 11))
 label_polygons.grid(column=0, row=0, sticky=tk.W, padx=10, pady=10)
 
-entry_polygons = ttk.Entry(frame, width=10)
+entry_polygons = ttk.Entry(frame, width=10, font=("Consolas", 12))
 entry_polygons.grid(column=1, row=0, sticky=tk.W, padx=10, pady=10)
 entry_polygons.insert(0, "10")
 
-label_sides = ttk.Label(frame, text="Lados de cada Polígono:")
+label_sides = ttk.Label(frame, text="Lados de cada Polígono", font=("Consolas bold", 11))
 label_sides.grid(column=0, row=1, sticky=tk.W, padx=10, pady=10)
 
-entry_sides = ttk.Entry(frame, width=10)
+entry_sides = ttk.Entry(frame, width=10, font=("Consolas", 12))
 entry_sides.grid(column=1, row=1, sticky=tk.W, padx=10, pady=10)
 entry_sides.insert(0, "5")
 
 # Adicionando o slider para selecionar a quantidade de polígonos por página
-label_slider = ttk.Label(frame, text="Polígonos por Página:")
+label_slider = ttk.Label(frame, text="Polígonos por Página", font=("Consolas bold", 11))
 label_slider.grid(column=0, row=2, sticky=tk.W, padx=10, pady=10)
 
 slider_polygons = tk.Scale(frame, from_=1, to=20, orient=tk.HORIZONTAL)
 slider_polygons.set(5)
 slider_polygons.grid(column=1, row=2, sticky=tk.W, padx=10, pady=10)
 
-button_draw = ttk.Button(frame, text="Desenhar Polígonos", command=on_button_click)
-button_draw.grid(column=0, row=3, columnspan=2, pady=20)
+button = ttk.Button(frame, text="Gerar", command=on_button_click)
+button.grid(column=0, row=3, columnspan=2, pady=10)
 
-# Barra de progresso
-progress_bar = ttk.Progressbar(frame, orient="horizontal", length=200, mode="determinate")
-# Barra de progresso inicialmente oculta
-progress_bar.grid_forget()
+button_download = ttk.Button(root, text="Salvar Imagens", command=lambda: nav.on_download_clicked())
+button_download.grid(column=0, row=3, columnspan=3, pady=10)
+button_download.grid_remove()  # Inicialmente escondido
 
-# Adicionando botão de download logo abaixo do botão de desenhar
-button_download = ttk.Button(frame, text="Download", command=lambda: nav.on_download_clicked() if nav else None)
-button_download.grid_forget()  # Esconde o botão inicialmente
+button_reset = ttk.Button(root, text="Voltar para Tela Inicial", command=lambda: nav.reset())
+button_reset.grid(column=0, row=4, columnspan=3, pady=15)
+button_reset.grid_remove()  # Inicialmente escondido
 
+progress_bar = ttk.Progressbar(root, orient="horizontal", mode="determinate")
+progress_bar.grid(column=0, row=5, columnspan=3, pady=10)
+progress_bar.grid_remove()  # Inicialmente escondida
 
 root.mainloop()
