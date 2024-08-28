@@ -26,22 +26,7 @@ Responsável por gerenciar a navegação e visualização dos polígonos. Suas p
 - **Criação de Widgets**: Cria os elementos da interface, como botões e canvas.
 - **Navegação**: Permite a navegação entre as páginas dos polígonos gerados.
 - **Download**: Salva as imagens dos polígonos na pasta escolhida, exibindo uma barra de progresso durante o processo.
----
 
-### Função de Clique do Botão
-
-A função captura as entradas do usuário, valida os valores e inicializa a classe Navigation para desenhar os polígonos.
-
----
-
-### Configuração da Janela Principal e Widgets
-
-A janela principal da interface é configurada, incluindo campos de entrada, botões e uma barra de progresso. A biblioteca Tkinter é usada para criar a interface, enquanto o Matplotlib é utilizado para plotar os polígonos.
-
----
-### Loop Principal da Interface Gráfica
-
-O loop principal da interface é iniciado, permitindo que você interaja com o aplicativo.
 
 ---
 ## Conceito de Permutação <a name = "permutacao"> </a>
