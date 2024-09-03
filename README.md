@@ -1,7 +1,5 @@
 <h1 align = "center"> Gerador de Polígonos em Python </h1>
 
-## Descrição
-
 Este repositório contém um aplicativo com interface gráfica (GUI) desenvolvido em Python usando Tkinter e Matplotlib. O aplicativo permite que você gere e visualize polígonos com um número de lados à sua escolha. Além disso, é possível navegar entre diferentes páginas de polígonos e salvar as imagens geradas.
 
 ## Funcionalidades
