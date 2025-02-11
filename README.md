@@ -7,6 +7,9 @@ Claro! Abaixo está um exemplo de como você pode estruturar um PDF explicando o
 
 O código apresentado é uma aplicação gráfica desenvolvida em Python utilizando a biblioteca `tkinter` para a interface gráfica e `matplotlib` para a visualização de polígonos. O objetivo principal do programa é gerar e exibir polígonos regulares com base em permutações de vértices, permitindo ao usuário navegar entre diferentes configurações e salvar as imagens geradas. Este documento visa explicar o funcionamento do código de forma técnica, detalhando cada componente e sua funcionalidade, ao mesmo tempo em que busca ser didático para facilitar o entendimento.
 
+## **Conceito de Permutação**
+
+Permutação é a reorganização dos elementos de um conjunto. Por exemplo, se temos o conjunto {1, 2, 3}, as permutações possíveis são: (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2) e (3, 2, 1). No contexto deste código, a permutação é usada para gerar todas as possíveis ordens dos vértices de um polígono, mantendo o primeiro vértice fixo. Isso permite criar diferentes formas para o mesmo polígono básico.
 
 ## **Estrutura do Código**
 
