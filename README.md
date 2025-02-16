@@ -1,11 +1,15 @@
 <h1 align = "center"> Gerador de Polígonos em Python </h1>
 
-Claro! Abaixo está um exemplo de como você pode estruturar um PDF explicando o código de forma técnica e didática. O texto é elaborado com elementos de coesão e argumentação para facilitar a compreensão.
-
-
 ## **Introdução**
 
 O código apresentado é uma aplicação gráfica desenvolvida em Python utilizando a biblioteca `tkinter` para a interface gráfica e `matplotlib` para a visualização de polígonos. O objetivo principal do programa é gerar e exibir polígonos regulares com base em permutações de vértices, permitindo ao usuário navegar entre diferentes configurações e salvar as imagens geradas. Este documento visa explicar o funcionamento do código de forma técnica, detalhando cada componente e sua funcionalidade, ao mesmo tempo em que busca ser didático para facilitar o entendimento.
+
+![{9CD32CBB-C6F7-414D-9EC4-A1AC4D4A19C1}](https://github.com/user-attachments/assets/bbea152d-9a54-45f7-95d9-90ae1de1ea34)
+
+![image](https://github.com/user-attachments/assets/e63b7bb9-7a01-40c9-9f23-2f96c54f9775)
+
+![{C48EF9C6-CA7A-4679-87F7-C51C25A8BD32}](https://github.com/user-attachments/assets/f9feb3a7-bd31-4404-a7e3-606cc5f3ce91)
+
 
 ## **Conceito de Permutação**
 
