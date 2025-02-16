@@ -64,6 +64,9 @@ Esses métodos permitem ao usuário navegar entre as páginas de polígonos, atu
 
 Permite ao usuário salvar as imagens dos polígonos em um diretório escolhido. O método também inclui uma barra de progresso para fornecer feedback visual durante o processo de salvamento.
 
+![{FAAD842A-805F-4898-A494-5A6875F1125A}](https://github.com/user-attachments/assets/d331181f-9fba-4523-95ca-e6094fa56621)
+
+
 #### **2.8. Método `create_widgets`**
 
 Cria os widgets da interface gráfica, como botões de navegação e a área de exibição dos polígonos.
