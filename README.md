@@ -30,6 +30,11 @@ O código começa com a importação das bibliotecas necessárias:
 - `itertools`: Para gerar permutações dos vértices.
 - `os`: Para manipulação de diretórios durante o salvamento das imagens.
 
+``` py
+pip install tk matplotlib numpy
+```
+
+
 Essas bibliotecas são essenciais para o funcionamento do programa, cada uma desempenhando um papel específico.
 
 ### **2. Classe `Navigation`**
